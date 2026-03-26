@@ -13,13 +13,21 @@ Apart from the standard tool kit for scientific computating for python, [Anancon
 - [tn-tools](https://github.com/mhauru/tntools).
 
 
-## I. Description of the scripts
+## I. Description of the files
+### I.1 Scripts
 We will use three scripts to do the numerical calculations:
 1. `findzc.py` determines the critical activity of the model using a bisection method.
 1. `rgzc.py` generates a tensor RG flow at the estimated critical activity; scaling dimensions are also estimated in this script.
 1. `plotRGflow.py` plots RG flows of estimated scaling dimensions, as well as the RG approximation errors.
 
 The file `wilsonRG.py` contains functions that are used in the above three scripts.
+
+
+### I.2 Jupyter Notebooks
+The three notebooks in `jupyterNB` explore the stability of the SSB fixed points, as well as the PT symmetry breaking of the transfer matrix:
+- `Sym-SSB-zplus.ipynb` studies the SSB fixed point of the positive-activity transition.
+- `Sym-SSB-zminus.ipynb` studies the SSB fixed point of the negative-activity transition.
+- `TMspectz.ipynb` studies the PT symmetry breaking of the transfer matrix for the negative-activity transition.
 
 
 ## II. Apply the EF-enhanced TNRG to the model
