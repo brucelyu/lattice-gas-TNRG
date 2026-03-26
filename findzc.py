@@ -84,7 +84,7 @@ elif scheme == "efrg":
 elif scheme == "loop-TNR":
     LF_max = 200
     LF_min = 10
-    sofinv = False
+    softinv = False
     eps_pinv = cgeps * 1.0
     if model == "hardsquareNeg":
         softinv = True
