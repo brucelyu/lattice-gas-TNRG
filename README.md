@@ -1,16 +1,22 @@
 # A TNRG study of the 1NN hard-square lattice gas model
+In this repository, we used a TNRG scheme enhanced by loop optimization to study the hard-square lattice gas model with nearest-neighbor exclusion (1NN).
+The scheme we use here incorporates the lattice-reflection, lattice-rotation and $\mathcal{PT}$ symmetry of the model.
+These symmetries are spontaneously broken in the two transitions of the model.
+In our preprint, [Lattice and PT symmetries in tensor-network renormalization group: a case study of a hard-square lattice gas model](https://arxiv.org/abs/2603.25492), we report the design of the scheme and the details of the numerical calculations conducted below. 
+The scheme is a generalization of the symmetric version of an advanced TNRG scheme called [loop-TNR](https://arxiv.org/abs/1512.04938).
 
-The implementation of the tensor RG map is in another repository [tensornetworkrg](https://github.com/brucelyu/tensornetworkrg), which is included here as a submodule.
-After cloning this repository to your computer, remember using the following command to pull from the submodules:
-```
-git submodule update --init --recursive
-```
 
 ## 0. Requirements
 Apart from the standard tool kit for scientific computating for python, [Ananconda](https://www.anaconda.com/download), we need the following packages for tensor network manipulations:
 - [ncon](https://github.com/mhauru/ncon), for tensor contractions,
 - [abeliantensors](https://github.com/mhauru/abeliantensors), for various tensor manipulations, and
 - [tn-tools](https://github.com/mhauru/tntools).
+
+The implementation of the tensor RG map is in another repository [tensornetworkrg](https://github.com/brucelyu/tensornetworkrg), which is included here as a submodule.
+After cloning this repository to your computer, remember using the following command to pull from the submodules:
+```
+git submodule update --init --recursive
+```
 
 
 ## I. Description of the files
@@ -28,6 +34,14 @@ The three notebooks in `jupyterNB` explore the stability of the SSB fixed points
 - `Sym-SSB-zplus.ipynb` studies the SSB fixed point of the positive-activity transition.
 - `Sym-SSB-zminus.ipynb` studies the SSB fixed point of the negative-activity transition.
 - `TMspectz.ipynb` studies the PT symmetry breaking of the transfer matrix for the negative-activity transition.
+
+
+### I.3 Implementation of the RG map
+We use the short hand notation `tnrg` to denote the library `tensornetworkrg` that is included here as a submodule.
+***The proposed RG map is implemented as the method `tnrg.TensorNetworkRG2D.trg_loopOpt` of the class `tnrg.TensorNetworkRG2D`.***
+This method assembles functions in the following two files:
+- TODO
+- TODO
 
 
 ## II. Apply the EF-enhanced TNRG to the model
