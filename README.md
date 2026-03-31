@@ -40,8 +40,17 @@ The three notebooks in `jupyterNB` explore the stability of the SSB fixed points
 We use the short hand notation `tnrg` to denote the library `tensornetworkrg` that is included here as a submodule.
 ***The proposed RG map is implemented as the method `tnrg.TensorNetworkRG2D.trg_loopOpt` of the class `tnrg.TensorNetworkRG2D`.***
 This method assembles functions in the following two files:
-- TODO
-- TODO
+- `tnrg.coarse_grain_2d.trg_rotsym.py`, which implements the symmetric TRG proposed in Sec.III of the preprint.
+- `tnrg.loop_filter.loopOpt_rotsym.py`, which implements the symmetric loop optimization proposed in Sec.III of the preprint.
+
+### I.4 Implementation of the initial tensor network of the model
+The initial tensor network of the model is implemented as the function `tnrg.initial_tensor.hardDisk_sqlat1NN`.
+Apart from the activity $z$ of the model, this function has another argument `scheme` specifying various ways to construct the tensor network.
+We implement 4 ways:
+1. `IRF` means "interaction-around-a-face" method. See Sec.3.2 of this preprint: [arXiv: 2210.06669](https://arxiv.org/pdf/2210.06669).
+1. `trg` is a TRG-like construction with a trivial bond matrix. Lattice symmetries are explicit in this construction. However, when the activity $z$ is negative, the tensor becomes complex, so the $\mathcal{PT}$ symmetry becomes implicit.
+1. `trgR` is similar to `trg`, but the tensor remains real-valued even for negative activity. However, the lattice symmetries become implicit.
+1. ***`trgRsym` is the construction reported in our preprint***. The tensor remains real and the lattice symmetries are explicit for both positive and negative activity $z$. A non-trivial bond matrix appears, which is implemented in the function `tnrg.initial_tensor.initial_bondz`.
 
 
 ## II. Apply the EF-enhanced TNRG to the model
